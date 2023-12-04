@@ -1,5 +1,5 @@
 package Participants;
-import Tools.Measurable;
+import Utils.Measurable;
 
 
 public class Dancer extends Person implements Measurable{
@@ -7,16 +7,12 @@ public class Dancer extends Person implements Measurable{
     private int age;
     private String danceLevel;
 
-    //probably will need in the future
-    //private int couple_number;
 
-    
     // Constructors
     public Dancer() {
     }
-    public Dancer(String dancerName, int dancerAge){
-    }
-    public Dancer(String fName, String lName, int age, String danceLevel) {
+
+    public Dancer(String fName, String lName, int age, String danceLevel, int couple_number) {
         super(fName, lName);
         this.age = age;
         this.danceLevel = danceLevel;
@@ -30,7 +26,9 @@ public class Dancer extends Person implements Measurable{
 		this.age = age;
 	}
 
-
+    public int getDancerId() {
+        return dancerId;
+    }
     
     public String getDanceLevel() {
         return danceLevel;
@@ -55,4 +53,5 @@ public class Dancer extends Person implements Measurable{
         this.dancerId = dancerId;
 
     }
+
 }

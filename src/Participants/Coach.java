@@ -1,6 +1,6 @@
 package Participants;
 
-import Tools.Measurable;
+import Utils.Measurable;
 
 public class Coach extends Person implements Measurable {
 	private int coachId; // Add coachId field

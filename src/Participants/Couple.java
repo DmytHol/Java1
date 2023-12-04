@@ -1,7 +1,7 @@
 package Participants;
 
-import Tools.DataSetGeneric;
-import Tools.Measurable;
+import Utils.DataSetGeneric;
+import Utils.Measurable;
 
 public class Couple implements Measurable {
 	private int coupleNum; // Add coupleNum field

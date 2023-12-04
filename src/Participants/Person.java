@@ -1,6 +1,6 @@
 package Participants;
 
-import Tools.Measurable;
+import Utils.Measurable;
 
 public abstract class Person implements Measurable {
 	private String fName;
