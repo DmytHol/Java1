@@ -3,13 +3,20 @@ import Tools.Measurable;
 
 
 public class Dancer extends Person implements Measurable{
+    private int dancerId;
     private int age;
-    private String danceLevel;  
+    private String danceLevel;
+
+    //probably will need in the future
+    //private int couple_number;
+
     
     // Constructors
-    public Dancer(){
+    public Dancer() {
     }
-    public Dancer (int age, String fName, String lName, String danceLevel){
+    public Dancer(String dancerName, int dancerAge){
+    }
+    public Dancer(String fName, String lName, int age, String danceLevel) {
         super(fName, lName);
         this.age = age;
         this.danceLevel = danceLevel;
@@ -22,6 +29,8 @@ public class Dancer extends Person implements Measurable{
     public void setAge(int age) {
 		this.age = age;
 	}
+
+
     
     public String getDanceLevel() {
         return danceLevel;
@@ -42,5 +51,8 @@ public class Dancer extends Person implements Measurable{
 	}
 
 
+    public void setDancerId(int dancerId) {
+        this.dancerId = dancerId;
 
+    }
 }

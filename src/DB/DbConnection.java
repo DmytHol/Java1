@@ -15,10 +15,14 @@ public class DbConnection {
     }
     public static Connection getConnection() {
         try {
-    		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/Scrutener", "root", "Hermione160!");
+            if (!VerifyDBClassLoaded()) {
+                throw new RuntimeException("MySQL JDBC driver not found. Add external library to your build path.");
+            }
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/scrutener", "root", "Hermione160!");
             return conn;
         } catch (SQLException e) {
-            return null;
+            e.printStackTrace();
+            throw new RuntimeException("Failed to connect", e);
         }
     }
 }

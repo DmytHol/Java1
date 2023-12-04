@@ -1,17 +1,23 @@
-import Participants.Couple;
+import DB.DancerDAO;
 import Participants.Dancer;
+import Tools.DataSetGeneric;
+
+
 
 public class Main {
+
     public static void main(String[] args) {
+        // Get all dancers from the database
+        DancerDAO dancerDAO = new DancerDAO();
+        DataSetGeneric<Dancer> dancers = dancerDAO.findAll();
+        printDancers(dancers);
 
 
-        Dancer d1 = new Dancer(10, "John", "Doe", "Beginner");
-        Dancer d2 = new Dancer( 20, "Jane", "Doe", "Intermediate");
+    }
 
-        Couple c1 = new Couple( d1, d2);
-
-
-        System.out.println(c1.toString());
-
+    private static void printDancers(DataSetGeneric<Dancer> dancers) {
+        for (Dancer dancer : dancers) {
+            System.out.println(dancer.toString());
+        }
     }
 }
